@@ -1,62 +1,110 @@
+/*
 
-/*CONSIDER: creating separate stylesheet for every viewport*/
-/*this is an alternative style for the blog (branch: stile_alt).*/
+This is the master branch style.
+
+CONSIDER:
+•creating different stylesheets for every viewport. 
+
+DONE: 
+•restored the default style, plus some changes
+•changed how the code is written and cleaned it
+•width of the body is 60%
+•restored the logo
+•added a general link style
+•removed the outline on the panels on archive
+*/
+
 
 * {box-sizing: border-box;}
 
 body {
 
-	width: 50%; 
-	min-height: 1200px; 
-	margin: auto; 
-	margin-bottom: 8px; 
-	font: 20px arial; 
-	padding-top: 0px;
-
+	width: 60%;
+	min-height: 1200px;
+	margin: auto;
+	margin-bottom: 8px;
+	background-color: #2c3556;
+ 	font: 20px arial;
+ 	padding-top: 0px;
 }
 
-a, a:visited {color: black; transition: color .2s;}
 
-a:hover {color: #839CB5;}
+a, a:active {
 
-/*logo and navbar style, removed the bg color*/
+	color: white; 
+	transition: color .3s;
+}
+
+
+a:hover, .paginazione a:hover {
+
+	cursor: pointer;
+	color: black;
+ 	background-color: #fdffd7;
+}
+
+/*pagination style*/
+
+.paginazione {
+
+	text-align: center;
+	margin-bottom: 38px;
+}
+
+
+.paginazione a {
+
+	color: white;
+	padding: 10px 20px;
+	transition: background-color.5s;
+}
+
+/*stile logo e navbar*/ 
 nav ul a, nav ul a:visited {
 
-display: inline-block;
-width: 25%;
-padding: 10px 16px;
-border-top: solid 1px black; border-bottom: solid 1px black;
-color: black;
-text-decoration: none;
-transition: background-color .5s;
-
-}
-
-nav ul a:hover {background-color: #839CB5;}
-
-.logo {width: 250px; height: 250px; margin: 38px auto; /*box-shadow: 0px 0px 20px 20px #00000052*/}
-
-/*removed: background color*/
-.menu {margin-top: 0px;}
-
-.menu_elementi {margin: 0px; padding: 0px; border: none; text-align: center;}
-
-/*
-this nav a rule is totally useless, TO DO: remove on the master branch too
-
-nav a {
-
+	color:black;
+	text-decoration: none;
+	transition:
+	background-color .5s;
+	background-color: #839cb5;
 	display: inline-block;
 	padding: 10px 16px;
 	width: 25%;
 	border: solid 1px #2c3556;
 }
-*/
 
 
-/*l'icona a barre del menù si vede solo su mobile;
-.panel è la tendina a scomparsa per il menù dell'archivio
-e deve apparire solo dopo il click dell'utente*/
+nav ul a:hover {background-color: #fdffd7;}
+
+
+.logo {
+
+	width: 250px;
+	height: 250px;
+	margin: 38px auto;
+	box-shadow: 0px 0px 20px 20px #00000052
+}
+
+
+.menu {
+
+	margin-top: 0px;
+	background-color: rgb(131,156,181);
+}
+
+
+.menu_elementi {
+
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	text-align: center;
+}
+
+
+/*.cerca_icona_mobile has to be shown on mobile; .panel è la tendina a
+scomparsa per il menù dell'archivio e deve apparire solo dopo il click
+dell'utente*/
 
 .panel, button.cerca_icona_mobile, .titolo_mobile {display: none;}
 
@@ -64,68 +112,107 @@ e deve apparire solo dopo il click dell'utente*/
 
 input[type=text] {
 
-	border: none; 
-	/*background-color: rgba(44, 53, 86, 0); */
-	font-size: 22px; width: 100%; 
+	border: none;
+	background-color: rgba(44, 53, 86, 0);
+	font-size: 22px;
+	width: 100%;
 	margin: 10px 0px 0px 0px;
-
+	color: white;
 }
 
-input[type=text]::placeholder {color: black; opacity: 0.6;}
-input[type=text]:focus {outline: none;}
 
-/*stile dei post su index.html*/
-/*removed: border, background color*/
-.post {padding: 10px; margin-bottom: 38px; /*box-shadow: 0px 0px 20px 20px #00000052*/}
+input[type=text]::placeholder {
 
-/*stile immagini*/
-img {max-width: 100%;}
-.fake_img {background-color: #839cb5; height: 292px;}
+	color: #ccc;
+	opacity: 0.6;
+}
 
 
-/*regole per tutto ciò che non è un post.*/
-/*.not_a_post {color: white;} since the bg is white, we don't want this.
-This is from the master branch style, wich has a blueish bg.*/
+input[type=text]:focus {
 
-/*sub-sezione per testo più piccolo*/
-.not_a_post_small {font-size: 14px;}
+	outline: none;
+}
 
 
-/*stile paginazione in fondo a index*/
-.paginazione {text-align: center; margin-bottom: 38px;}
+/*post style on main page*/
 
-.paginazione a{color: black; padding: 10px 20px; transition: background-color .5s;}
+.post {
 
-.paginazione a:hover{background-color: #839CB5; color: white;}
+	background-color: rgb(253,255,215);border: solid 1px orange;
+	padding: 10px;
+	margin-bottom: 38px;box-shadow: 0px 0px 20px 20px #00000052
+}
 
-/*pannello top-down archivio*/
+
+img {max-width: 100%;} 
+
+
+/*placeholder images*/
+
+.fake_img {
+
+	background-color: #839cb5;
+	height: 292px;
+}
+
+
+/*if you're not showing text on a post, use this class. You don't want to use
+black text on a blue background.*/
+
+.not_a_post {color: white;}
+
+/*sub-section for smaller text.*/
+
+.not_a_post_small {
+
+	color: white;
+	font-size: 14px;
+}
+
+
+
+
+
+/*top-down panel on archive page*/
 
 .archivio {
 
 	border: none;
-	padding: 10px; 
-	margin-bottom: 8px; 
-	width: 100%; 
-	background-color: white;
-	transition: background-color .3s; 
-	text-align: left; 
+	padding: 10px;
+	margin-bottom: 8px;
+	width: 100%;
+	background-color: #839cb5;
+	transition: background-color .3s;
+	text-align: left;
 	font-size: 20px;
-
 }
 
+
 .panel {font-size: 18px;}
-.archivio:hover, .active {background-color: #839CB5; cursor: pointer;}
+
+
+.archivio:hover, .active {
+
+	background-color: rgb(253,255,215);
+	cursor: pointer;
+} 
+
 .archivio:focus {outline: none;}
-/*icone a destra dentro il bottone per la tendina a scomparsa*/
-.archivio:after {content: "\002B"; float: right;} /*segno "più" (+)*/
-.active:after {content: "\2212";}/*segno "meno" (-)*/
+
+
+/*icone a destra dentro
+il bottone per la tendina a scomparsa*/ 
+
+.archivio:after {content: "\002B";float: right;} /*segno "più" (+)*/ 
+.active:after {content: "\2212";} /*segno "meno" (-)*/
 
 /*stile galleria (grid CSS)*/
+
 .img_grid {
 
-	display: grid; 
-	grid-template-columns: auto auto auto; 
-	grid-gap: 8px; 
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 8px;
 	margin-bottom: 38px;
 
 }
@@ -133,100 +220,159 @@ This is from the master branch style, wich has a blueish bg.*/
 .material-icons {}
 
 /*tablets*/
+
 @media only screen and (max-width: 768px) {
-	body {font-size: 24px; width: 100%; margin: 0px;}
-	nav a {width: 50%;}
-	.img_grid {grid-template-columns: auto auto;}
-	/*.menu {background-color: #2c3556;}*/
+
+	body {
+
+		font-size: 24px;
+		width: 100%;
+	 	margin: 0px;
+
+	} 
+
+	nav a {
+
+		width: 50%;
+
+	} 
+
+		.img_grid {
+		grid-template-columns: auto auto;
+
+	} 
+
+	.menu {
+
+	background-color: #2c3556;
+
+	} 
+
 }
 
 
 /*mobile*/
+
 @media only screen and (max-width: 425px) {
+
 
 	body {
 
 		width: 100%;
 		margin: 0px;
 		margin-bottom: 8px;
+		background-color: #2c3556;
 		font: 24px arial;
-		padding: 0px;
-		padding-top: 0px;
+	 	padding: 0px;
+	 	padding-top: 0px;
+
 	}
 
-	.menu {width: 100%; height: 50px;}
+	.menu {
 
-	/*spazio per 5 elementi (calc(20% - 10px))*/
-	nav a {width: calc(20% - 10px); height: 50px; border: none;} 
+		width: 100%;
+		height: 50px;
 
-	nav a::before {content: attr(class);}
+	}
+
+	/*nav has 5 elements (search icon) instead of 4*/
+	nav a {
+
+	width: calc(20% - 10px);
+	height: 50px;
+	border: none;
+
+	}
+
+	nav a::before {
+
+		content: attr(class);
+
+	}
 
 	button.cerca_icona_mobile {
 
-		display: inline-block; 
-		background-color: #839cb5; 
-		width: calc(20% - 10px); 
-		border: none; 
-		height: 50px; 
-		position: relative; top: -27px; 
-		padding: 10px 16px; 
-		transition: background-color .5s
-	}
+		display: inline-block;
+		background-color: #839cb5;
+		width: calc(20% - 10px);
+	 	border: none;
+	 	height: 50px;
+	 	position: relative;
+	 	top: -27px;
+	 	padding: 10px 16px;
+	 	transition: background-color .5s
+
+	 }
+
 
 	button.cerca_icona_mobile:hover {
 
-		background-color: rgba(253,255,215,1); 
+		background-color: rgba(253,255,215,1);
 		cursor: pointer;
 
-	}	
-
-
-	/*
-	•rimpicciolisce l'immagine
-	•la mette a sinistra
-	•toglie l'ombra, altrimenti visibile
-	*/
+	 }	
 
 	.logo {
 
-		width: 50px; 
-		height: 50px; 
-		margin: 0px; 
-		float: left; 
+		width: 50px;
+		height: 50px;
+		margin: 0px;
+		float: left;
 		box-shadow: none;
 
-		} 
+	} /*rimpicciolisce l'immagine, la mette a sinistra e toglie l'ombra*/ 
 
-	hr, input[type=text] {display: none;} /*si trova fra l'header ed il corpo*/
+	hr, input[type=text] {
 
-	span {font-size: 0px;} /*testo contenuto all'interno del tag <span>
-	nei pulsanti della navbar: questo lo rimuove 
-	(non funziona con IE11 o più vecchi)*/
+		display: none;
 
-	.post {box-shadow: none;}
+		} /*si trova fra l'header ed il corpo*/
 
-	/*post title*/
+	span {
+
+	font-size: 0px;
+
+	} /*testo contenuto all'interno di tag <span> nei pulsanti
+	della navbar: questo lo rimuove (non funziona con IE11 o più vecchi)*/
+
+	.post {
+
+		box-shadow: none;
+
+	}
+
 	.titolo_mobile {
 
-		display: block; 
-		color: white; 
-		text-align: center; 
-		background-color: #0000004f;
-		 margin-top: 0; 
-		 margin-bottom: 1em;
+		display: block;
+		color: white;
+		text-align: center;
+		.background-color: #0000004f;
+		 margin-top: 0;
+	 	margin-bottom: 1em;
 
-		}
+	}
 
-	/*da spazio fra un post e l'altro, 
-	ed il menu nel caso del post in cima alla pagina*/
-	.post {margin-bottom: 38px;} 
+	.post {
 
-	/*ho dato un padding più stretto fra i numeri della paginazione,
-	per farlo entrare*/
-	.paginazione a{padding: 10px 10px; margin: 38px 0px;} 
+	margin-bottom: 38px;
 
-	/*una colonna di immagini verrà mostrata in galleria*/
-	.img_grid {grid-template-columns: auto;} 
+	} /*da spazio fra un post e l'altro, ed il menu nel
+	.caso del post in cima alla pagina*/
+
+	.paginazione a {
+
+		padding: 10px 10px;
+	 	margin: 38px 0px;
+
+	} /*ho dato un padding più
+	.stretto fra i numeri della paginazione, per farlo entrare*/
+
+	.img_grid {
+
+	grid-template-columns: auto;
+
+	} /*una colonna di immagini verrà
+	.mostrata in galleria*/
 
 }
 
