@@ -1,16 +1,6 @@
 
 /*CONSIDER: creating separate stylesheet for every viewport*/
-
-/*
-stile_alt:
-•code reordered (and fixed tbh)
-•the bg is white
-•buttons are white
-•alt style for buttons border
-•hover color is now #839CB5
-•placeholder "Cerca nel blog..." is now black.
-•removed the default outline to the .archivio button when focused
-*/
+/*this is an alternative style for the blog (branch: stile_alt).*/
 
 * {box-sizing: border-box;}
 
