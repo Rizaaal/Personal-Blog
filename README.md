@@ -1,2 +1,2 @@
 # Personal-Blog
-My first personal blog. Not online yet. 
+My first personal blog.
