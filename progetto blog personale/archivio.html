@@ -10,12 +10,14 @@
 		
 		<meta name="author" content="Gabriele Di Grazia">
 		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--risolvere problema visualizzazione mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<link rel="stylesheet" type="text/css" href="style.css">
 
-		<!-- material icons per le icone -->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- material icons -->
+		<link href=
+		"https://fonts.googleapis.com/icon?family=Material+Icons" 
+		rel="stylesheet">
 
 		<title>Blog - archivio</title>
 
@@ -31,19 +33,46 @@
 			</a>
 		</header>
 
-<!-- navbar. Gli elementi a sono saparati da alcuni commenti, poichè se andassi semplicemente a capo si formerebbe un whitespace che andrebbe a sfalsare il layout della navbar. Escogitando questo metodo, sono in grado di andare a capo nel codice, rendendolo più leggibile senza alterare il layout. -->		
-		<nav class="menu">
-			<ul class="menu_elementi">
-				   <a href="index.html"><i class="material-icons">create</i><br><span>post</span></a><!--
-				--><a href="archivio.html"><i class="material-icons">folder</i><br><span>archivio</span></a><!--
-				--><a href="galleria.html"><i class="material-icons">photo</i><br><span>galleria</span></a><!--
-				--><a href="about.html"><i class="material-icons">person_pin</i><br><span>about</span></a><!--
-				--><button class="cerca_icona_mobile"><i class="material-icons">search</i></button><!--ricerca on button click su mobile anzichè barra di ricerca (display: none su "style.css")-->
-			</ul>			
+<!-- navbar. Gli elementi a sono saparati da alcuni commenti, poichè se andassi 
+	semplicemente a capo si formerebbe un whitespace che andrebbe a sfalsare il 
+	layout della navbar. Escogitando questo metodo, sono in grado di andare a 
+	capo nel codice, rendendolo più leggibile senza alterare il layout. -->		
+	<nav class="menu">
+		<ul class="menu_elementi">
+
+			<a href="index.html"><!--
+			--><i 
+				class="material-icons">create</i><br><span>post</span></a><!--
+			--><a 
+				href="archivio.html" style="background-color: #fdffd7"><!--
+			--><i 
+				class="material-icons">folder</i><br><span>archivio</span></a><!--
+			--><a 
+				href="galleria.html"><!--
+			--><i 
+				class="material-icons">photo</i><br><span>galleria</span></a><!--
+			--><a 
+				href="about.html"><!--
+			--><i 
+				class="material-icons">person_pin</i><br><span>about</span><!--
+			--></a><!--
+				
+			--><!--ricerca on button click su mobile anzichè barra di ricerca 
+			(display: none su "style.css")--><!--
+			--><button class="cerca_icona_mobile"
+				onclick="displaySearchBar()"><!--
+			--><i class="material-icons">search</i></button>
+
+			</ul>
+		
 		</nav>
 
 		<!-- casella di ricerca sotto la navbar -->
-		<input type="text" name="ricerca" placeholder="Cerca nel blog...">
+		<input 
+		id="searchbar" 
+		type="text" 
+		name="ricerca" 
+		placeholder="Cerca...">
 		
 		<hr>
 		<!-- accordion -->
@@ -54,16 +83,16 @@
 			<button class="archivio">Ottobre 2018</button>
 				<div class="panel">	
 					<ul>
-						<li><a href="Post_1.html" style="color: white;">Post 5</li></a>
+						<li><a href="Post_5.html">Post 5</li></a>
 					</ul>
 				</div>
 			<button class="archivio">Data Sconosciuta</button>
 				<div class="panel">	
 					<ul>
-						<li><a href="#" style="color: white;">Post 4</a></li>
-						<li><a href="#" style="color: white;">Post 3</a></li>
-						<li><a href="#" style="color: white;">Post 2</a></li>
-						<li><a href="#" style="color: white;">Post 1</a></li>
+						<li><a href="#">Post 4</a></li>
+						<li><a href="#">Post 3</a></li>
+						<li><a href="#">Post 2</a></li>
+						<li><a href="#">Post 1</a></li>
 					</ul>
 				</div>
 <!-- script per far scendere la tendina -->
@@ -83,11 +112,53 @@
 					    });
 					}
 				</script>	
-<!-- qualche appunto -->
+
+<!-- a note -->
+
 		</div>
 		<div class="not_a_post_small">
-			<p>Nota: il fatto che funziona solo il link "post 1" è stato fatto di proposito (funge da esempio).</p>
-		</div>			
+			<p>Nota: il fatto che funziona solo il link "post 5" è stato fatto 
+			di proposito (funge da esempio).</p>
+		</div>	
+
+<!-- modal overlay for the serach bar that display only on the mobile viewport 
+-->
+
+		<div id="modal_overlay" 
+		style="left: -500px; background-color: rgba(0, 0, 0, 0);">
+
+			<input id="mobile_searchbar" 
+			type="text" 
+			name="ricercaMobile"
+			placeholder="cerca...">
+
+			<button id="modal_overlay_X_btn" onclick="exitOverlay()">✖</button>
+
+
+
+		</div>
+
+<!-- this script toggles the serarchbar on mobile viewport -->
+
+		<script>
+
+			let overlay = 
+			document.getElementById('modal_overlay').style;
+
+
+				function displaySearchBar() {
+						overlay.left = "0px";
+						overlay.backgroundColor = "rgba(0, 0, 0, 0.5)";
+
+					}
+
+				function exitOverlay() {
+					overlay.backgroundColor = "rgba(0, 0, 0 ,0)"
+					overlay.left = "-500px";
+
+					}
+
+		</script>		
 						
 	</body>
 </html>

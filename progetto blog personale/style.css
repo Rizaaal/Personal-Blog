@@ -1,27 +1,72 @@
+/*
 
-/*alcune regole generali*/
-/*Potrei voler creare un foglio di stile diverso per ogni pagina?*/
+This is not the stylesheet contained on the .git folder.
+
+CONSIDER:
+•creating different stylesheets for every viewport. 
+
+DONE: 
+•On line 28, changed a:active to a:visited.
+•changed how the buttons width on the nav on the mobile viewport are calculated:
+now the .menu takes into account the 50px logo img,
+and the buttons are simply 20% wide.
+•Removed a lot of transitions and animations.
+
+*/
+
+
 * {box-sizing: border-box;}
 
-body {width: 80%; min-height: 1200px; margin: auto; margin-bottom: 8px; background-color: #2c3556; font: 20px arial; ; padding-top: 0px;}
+body {
 
-/*stile logo e navbar*/
-nav ul a, nav ul a:visited {
-color:black;
-text-decoration: none;
-background-color: rgb(131,156,181);
-transition: background-color .5s;
+	width: 60%;
+	min-height: 1200px;
+	margin: auto;
+	margin-bottom: 8px;
+	background-color: #2c3556;
+ 	font: 20px arial;
+ 	padding-top: 0px;
 }
 
-nav ul a:hover {background-color: #fdffd7;}
+/*general link style*/
 
-.logo {width: 250px; height: 250px; margin: 38px auto; box-shadow: 0px 0px 20px 20px #00000052}
+a, a:visited {
 
-.menu {margin-top: 0px; background-color: rgb(131,156,181);}
+	color: white; 
+	transition: color .3s;
+}
 
-.menu_elementi {margin: 0px; padding: 0px; border: none; text-align: center;}
 
-nav a {
+a:hover, button.cerca_icona_mobile:hover {cursor: pointer;}
+
+
+/*pagination container*/
+
+.paginazione {
+
+	text-align: center;
+	margin-bottom: 38px;
+}
+
+/*pagination elements*/
+
+.paginazione a {
+
+	color: white;
+	padding: 10px 20px;
+	transition: background-color.5s;
+}
+
+.paginazione a:hover {cursor: pointer; background-color: #FDFFD7; color: black;}
+
+/*logo and navbar style*/ 
+
+nav a, nav a:visited {
+
+	color:black;
+	text-decoration: none;
+	transition:
+	background-color .5s;
 	background-color: #839cb5;
 	display: inline-block;
 	padding: 10px 16px;
@@ -30,88 +75,329 @@ nav a {
 }
 
 
-/*l'icona a barre del menù di vede solo su mobile; .panel è la tendina a scomparsa per il menù dell'archivio e deve apparire solo dopo il click dell'utente*/
-.panel, button.cerca_icona_mobile, .titolo_mobile {display: none;}
+.logo {
+
+	width: 250px;
+	height: 250px;
+	margin: 38px auto;
+	box-shadow: 0px 0px 20px 20px #00000052
+}
+
+
+.menu {
+
+	margin-top: 0px;
+	background-color: rgb(131,156,181);
+}
+
+
+.menu_elementi {
+
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	text-align: center;
+}
+
+
+/*.cerca_icona_mobile has to be shown on mobile; .panel è la tendina a
+scomparsa per il menù dell'archivio e deve apparire solo dopo il click
+dell'utente*/
+
+.panel, button.cerca_icona_mobile, .titolo_mobile, #mobile_searchbar, #modal_overlay_X_btn {display: none;}
 
 /*casella di testo per ricerca in alto*/
 
-input[type=text] {border: none; background-color: rgba(44, 53, 86, 0); font-size: 22px; width: 100%; margin: 10px 0px 0px 0px; color: white;}
-input[type=text]::placeholder {color: #ccc; opacity: 0.6;}
-input[type=text]:focus {outline: none;}
+#searchbar {
 
-/*stile dei post su index.html*/
-.post {background-color: rgb(253,255,215);border: solid 1px orange; padding: 10px; margin-bottom: 38px;box-shadow: 0px 0px 20px 20px #00000052}
+	border: none;
+	background-color: rgba(44, 53, 86, 0);
+	font-size: 22px;
+	width: 100%;
+	margin: 10px 0px 0px 0px;
+	color: white;
+}
 
-/*stile immagini*/
-img {max-width: 100%;}
-.fake_img {background-color: #839cb5; height: 292px;}
+
+#searchbar::placeholder {
+
+	color: #ccc;
+}
 
 
-/*regole per tutto ciò che non è un post.*/
+#searchbar:focus {
+
+	outline: none;
+}
+
+
+/*post style on main page*/
+
+.post {
+
+	background-color: rgb(253,255,215);border: solid 1px orange;
+	padding: 10px;
+	margin-bottom: 38px;box-shadow: 0px 0px 20px 20px #00000052
+}
+
+/* if present, header imager on the blog post*/
+
+.post h6 + img {
+	width: 100%;
+}
+
+
+img {max-width: 100%;} 
+
+
+
+/*if you're not showing text on a post, use this class. You don't want to use
+black text on a blue background.*/
+
 .not_a_post {color: white;}
-/*sub-sezione per testo più piccolo*/
-.not_a_post_small {color: white; font-size: 14px;}
+
+/*sub-section for smaller text.*/
+
+.not_a_post_small {
+
+	color: white;
+	font-size: 14px;
+}
 
 
-/*stile paginazione in fondo a index*/
-.paginazione {text-align: center; margin-bottom: 38px;}
+/*top-down panel on archive page*/
 
-.paginazione a{color: white; padding: 10px 20px; transition: background-color .5s;}
+.archivio {
 
-.paginazione a:hover{background-color: rgb(253,255,215); color: #2c3556;}
+	border: none;
+	padding: 10px;
+	margin-bottom: 8px;
+	width: 100%;
+	background-color: #839cb5;
+	transition: background-color .3s;
+	text-align: left;
+	font-size: 20px;
+}
 
-/*pannello top-down archivio*/
 
-.archivio {border: none; padding: 10px; margin-bottom: 8px; width: 100%; background-color: #839cb5; transition: background-color .3s; text-align: left; font-size: 20px;}
 .panel {font-size: 18px;}
-.archivio:hover, .active {background-color: rgb(253,255,215); cursor: pointer;}
-/*icone a destra dentro il bottone per la tendina a scomparsa*/
-.archivio:after {content: "\002B"; float: right;} /*segno "più" (+)*/
-.active:after {content: "\2212";}/*segno "meno" (-)*/
+
+
+.archivio:hover, .active {
+
+	background-color: rgb(253,255,215);
+	cursor: pointer;
+} 
+
+.archivio:focus {outline: none;}
+
+
+/*icone a destra dentro
+il bottone per la tendina a scomparsa*/ 
+
+.archivio:after {content: "\002B";float: right;} /*segno "più" (+)*/ 
+.active:after {content: "\2212";} /*segno "meno" (-)*/
 
 /*stile galleria (grid CSS)*/
-.img_grid {display: grid; grid-template-columns: auto auto auto; grid-gap: 8px; margin-bottom: 38px;}
+
+.img_grid {
+
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 8px;
+	margin-bottom: 38px;
+	place-items: center;
+
+}
+
+.img_grid a img {
+	width: 450px; height: 450px;
+	object-fit: cover;
+
+}
 
 .material-icons {}
 
 /*tablets*/
+
 @media only screen and (max-width: 768px) {
-	body {font-size: 24px; width: 100%; margin: 0px;}
-	nav a {width: 50%;}
-	.img_grid {grid-template-columns: auto auto;}
-	/*.menu {background-color: #2c3556;}*/
+
+	body {
+		font-size: 24px;
+		width: 100%;
+	 	margin: 0px;
+
+	} 
+
+	nav a {
+		width: 50%;
+
+	} 
+
+	.img_grid {
+	grid-template-columns: auto auto;
+
+	}
+
+
 }
 
 
 /*mobile*/
+
 @media only screen and (max-width: 425px) {
 
-	body {width: 100%; margin: 0px; margin-bottom: 8px; background-color: #2c3556; font: 24px arial; padding: 0px; padding-top: 0px;}
 
-	.menu {width: 100%; height: 50px;}
+	body {
 
-	nav a {width: calc(20% - 10px); height: 50px; border: none;} /*spazio per 5 elementi (calc(20% - 10px))*/
+		width: 100%;
+		margin: 0px;
+		margin-bottom: 8px;
+		font: 24px arial;
+	 	padding: 0px;
+	 	padding-top: 0px;
 
-	nav a::before {content: attr(class);}
+	}
 
-	button.cerca_icona_mobile {display: inline-block; background-color: #839cb5; width: calc(20% - 10px); border: none; height: 50px; position: relative; top: -27px; padding: 10px 16px; transition: background-color .5s}
-	button.cerca_icona_mobile:hover {background-color: rgba(253,255,215,1); cursor: pointer; }	
+	.menu {
 
-	.logo {width: 50px; height: 50px; margin: 0px; float: left; box-shadow: none;} /*rimpicciolisce l'immagine - la mette a sinistra - toglie l'ombra, altrimenti visibile*/ 
+		width: calc(100% - 50px); /*this takes into account the 50px image logo
+		 on the left*/
+		height: 50px;
+		float: right;
+	}
 
-	hr, input[type=text] {display: none;} /*si trova fra l'header ed il corpo*/
+	/*nav has 5 elements (search icon) instead of 4*/
+	nav a {
 
-	span {font-size: 0px;} /*testo contenuto all'interno di tag <span> nei pulsanti della navbar: questo lo rimuove (non funziona con IE11 o più vecchi)*/
+	width: 20%;
+	height: 50px;
+	border: none;
 
-	.post {box-shadow: none;}
+	}
 
-	.titolo_mobile {display: block; color: white; text-align: center; background-color: #0000004f; margin-top: 0; margin-bottom: 1em;}
+	nav a::before {
 
-	.post {margin-bottom: 38px;} /*da spazio fra un post e l'altro, ed il menu nel caso del post in cima alla pagina*/
+		content: attr(class);
 
-	.paginazione a{padding: 10px 10px; margin: 38px 0px;} /*ho dato un padding più stretto fra i numeri della paginazione, per farlo entrare*/
+	}
 
-	.img_grid {grid-template-columns: auto;} /*una colonna di immagini verrà mostrata in galleria*/
+	button.cerca_icona_mobile {
+
+		display: inline-block;
+		background-color: #839cb5;
+		width: 20%;
+	 	border: none;
+	 	height: 50px;
+	 	position: relative;
+	 	top: -27px;
+	 	padding: 10px 16px;
+	 	transition: background-color .5s
+
+	 }
+
+	 /*searchbar to be displayed only on this viewport*/
+
+	 #mobile_searchbar {
+	 	display: inline-block;
+	 	width: 80%;
+	 	font-size: 2em;
+	 	margin-left: 10%; margin-top: 20%;
+	 	border: none;
+
+	 }
+
+	 #mobile_searchbar::placeholder {
+	 	color: #ccc;
+
+	 }
+
+
+	 /*transparent overlay that appears when the searchbar button is clicked*/
+
+	#modal_overlay {
+		display: block;
+		transition: background-color 1s, left .5s;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+
+	}
+
+	#modal_overlay_X_btn {
+		display: inline;
+		float: right;
+		border: none;
+		background-color: transparent;
+		color: white;
+		font-size: 20px;
+
+	}
+
+	#modal_overlay_X_btn:hover {
+		cursor: pointer;
+		
+	}
+
+
+
+	.logo {
+
+		width: 50px;
+		height: 50px;
+		margin: 0px;
+		float: left;
+		box-shadow: none;
+
+	} /*rimpicciolisce l'immagine, la mette a sinistra e toglie l'ombra*/ 
+
+	hr, #searchbar {display: none;}
+
+	span {
+
+	font-size: 0px;
+
+	} /*testo contenuto all'interno di tag <span> nei pulsanti
+	della navbar: questo lo rimuove (non funziona con IE11 o più vecchi)*/
+
+	.post {
+
+		box-shadow: none;
+
+	}
+
+	.titolo_mobile {
+
+		display: block;
+		color: white;
+		text-align: center;
+		.background-color: #0000004f;
+		 margin-top: 0;
+	 	margin-bottom: 1em;
+
+	}
+
+	.post {
+
+	margin-bottom: 38px;
+
+	} /*da spazio fra un post e l'altro, ed il menu nel
+	.caso del post in cima alla pagina*/
+
+	.paginazione a {
+
+		padding: 10px 10px;
+	 	margin: 38px 0px;
+
+	} /*ho dato un padding più
+	.stretto fra i numeri della paginazione, per farlo entrare*/
+
+	.img_grid {
+
+	grid-template-columns: auto;
+
+	} /*una colonna di immagini verrà
+	.mostrata in galleria*/
 
 }
 
