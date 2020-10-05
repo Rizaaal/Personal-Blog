@@ -20,8 +20,8 @@
 	<body>
 <!-- main logo -->		
 		<header class="logo">
-			<a href="index.html">
-				<img src="wp-content/themes/BlogPersonale/logo.png" alt="logo pagina">
+			<a href="https://localhost/wordpress/">
+				<img src="logo.png" alt="logo pagina">
 			</a>
 		</header>
 
@@ -30,19 +30,19 @@
 	<nav class="menu">
 		<ul class="menu_elementi">
 
-			<a href="index.html"><!--
+			<a href="https://localhost/wordpress/"><!--
 			--><i 
 				class="material-icons">create</i><br><span>post</span></a><!--
 			--><a 
-				href="wp-content/themes/BlogPersonale/archivio.html" style="background-color: #fdffd7"><!--
+				href="archivio.html" style="background-color: #fdffd7"><!--
 			--><i 
 				class="material-icons">folder</i><br><span>archivio</span></a><!--
 			--><a 
-				href="wp-content/themes/BlogPersonale/galleria.html"><!--
+				href="galleria.php"><!--
 			--><i 
 				class="material-icons">photo</i><br><span>galleria</span></a><!--
 			--><a 
-				href="wp-content/themes/BlogPersonal/eabout.html"><!--
+				href="about.html"><!--
 			--><i 
 				class="material-icons">person_pin</i><br><span>about</span><!--
 			--></a><!--

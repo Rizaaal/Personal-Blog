@@ -5,7 +5,7 @@
 		<meta name="descrizione" content="questo è un blog prova">
 		<meta name="author" content="Gabriele Di Grazia">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="wp-content/themes/BlogPersonale/style.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<!-- material icons per le icone -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>Blog - Galleria</title>
@@ -13,7 +13,7 @@
 	<body>
 <!-- main logo -->
 		<header class="logo">
-			<a href="index.html">
+			<a href="https://localhost/wordpress/">
 				<img src="logo.png" alt="logo pagina">
 			</a>
 		</header>
@@ -23,15 +23,15 @@
 		<nav class="menu">
 			<ul class="menu_elementi">
 
-				<a href="index.html"><!--
+				<a href="https://localhost/wordpress/"><!--
 				--><i class="material-icons">create</i><br><!--
 				--><span>post</span></a><!--
-				--><a href="archivio.html"><!--
+				--><a href="archivio.php"><!--
 				--><i class="material-icons">folder</i><br><!--
 				--><span>archivio</span></a><!--
-				--><a href="galleria.html" style="background-color: #fdffd7"><!--
+				--><a href="galleria.php" style="background-color: #fdffd7"><!--
 				--><i class="material-icons">photo</i><br><!--
-				--><span>galleria</span></a><a href="about.html"><!--
+				--><span>galleria</span></a><a href="about.php"><!--
 				--><i class="material-icons">person_pin</i><br><!--
 				--><span>about</span></a><!--
 				
@@ -56,7 +56,7 @@
 		<h3 class="titolo_mobile">Galleria</h3>
 
 		<div class="img_grid">
-			<!-- 12 immagini per pagina -->
+			<!-- 12 images per page -->
 			<a href="https://placeimg.com/1000/1000/any">
 				<img src="https://placeimg.com/1000/1000/any">
 			</a>
